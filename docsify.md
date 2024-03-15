@@ -93,11 +93,31 @@ pm2 save
 这样，你就可以确保`docsify`服务在指定的目录(`/root/data/`)下运行，并且配置了自动重启和系统重启后自动启动。
 
 ### 定制功能
-
 因为整个项目本身就是以源码的形式发布的，所以给了用户较大的定制空间
 
+#### 代码框修改间距
+只需要在<head></head>之间添加以下代码即可
+```
+  <style>
+    .markdown-section pre>code{
+      padding: 1.2em 5px;
+    }
+  </style>
+```
 教程参考：
 
 [使用 docsify 并定制以使它更强大 - 掘金 (juejin.cn)](https://juejin.cn/post/7112247501167525919#heading-0)
 
-[Docsify文档搭建记录 | 肆零肆 (xmq.plus)](https://xmq.plus/posts/1654.html#toc-heading-1)
+[Docsifyb文档搭建记录 | 肆零肆 (xmq.plus)](https://xmq.plus/posts/1654.html#toc-heading-1)
+
+### 疑难杂症
+#### 一直卡Laoding
+docsify的css和js都是从cdn.jsdelivr.net所导入的，但是国内访问jsdelivr的速度就很。。。所以就造成了一直在Loading
+
+解决方法有2种，分别是
+- 将文件从本地引入
+- 改成其它域名引入
+为了方便采用第二种方法，把cdn改成了fastly，问题解决
+
+
+
