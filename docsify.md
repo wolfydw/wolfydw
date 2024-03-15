@@ -96,7 +96,7 @@ pm2 save
 因为整个项目本身就是以源码的形式发布的，所以给了用户较大的定制空间
 
 #### 代码框修改间距
-只需要在<head></head>之间添加以下代码即可
+只需要在`<head>``</head>`之间添加以下代码即可
 ```
   <style>
     .markdown-section pre>code{
