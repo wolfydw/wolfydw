@@ -96,7 +96,7 @@ pm2 save
 因为整个项目本身就是以源码的形式发布的，所以给了用户较大的定制空间
 
 #### 代码框修改间距
-只需要在`<head>``</head>`之间添加以下代码即可
+只需要在`<head>` `</head>`之间添加以下代码即可
 ```
   <style>
     .markdown-section pre>code{
@@ -107,8 +107,34 @@ pm2 save
 教程参考：
 
 [使用 docsify 并定制以使它更强大 - 掘金 (juejin.cn)](https://juejin.cn/post/7112247501167525919#heading-0)
-
 [Docsifyb文档搭建记录 | 肆零肆 (xmq.plus)](https://xmq.plus/posts/1654.html#toc-heading-1)
+
+### git 同步
+#### 首次操作
+1. 在GitHub上创建一个新的仓库，并获取仓库的URL，看起来像这样：https://github.com/yourusername/your-repo-name.git。
+2. 转到设置（Settings）> 开发者设置（Developer settings）> 个人访问令牌（Personal access tokens）
+3. 点击“生成新令牌”（Generate new token），选择所需的权限（对于推送操作，确保选中了repo），然后生成令牌。令牌只会显示一次，一定要妥善保存
+4. 回到vps进行操作
+```
+# 安装git
+apt install git
+# 转到docs目录并初始化仓库
+cd /root/data/docs
+git init
+# 将/docs/内所有文件添加到仓库中
+git add .
+# 使用GitHub提供的仓库URL将远程仓库添加为origin
+git remote add origin https://github.com/yourusername/your-repo-name.git
+# 推送本地更改到GitHub
+git push -u origin master
+```
+注意，推送时需要账号和PAT令牌，而不是密码哦
+
+#### 拉取操作
+```
+cd /root/data/docs
+git pull origin master
+```
 
 ### 疑难杂症
 #### 一直卡Laoding
@@ -117,6 +143,7 @@ docsify的css和js都是从cdn.jsdelivr.net所导入的，但是国内访问jsde
 解决方法有2种，分别是
 - 将文件从本地引入
 - 改成其它域名引入
+
 为了方便采用第二种方法，把cdn改成了fastly，问题解决
 
 
