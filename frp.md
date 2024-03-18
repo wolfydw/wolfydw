@@ -55,11 +55,11 @@ sudo systemctl enable frps
 ```
 
 ## 安装frpc
-### 下载 frpc 和 frpc.toml，并给权限
+**下载 frpc 和 frpc.toml，并给权限**
 ```
 chmod +x ./frpc
 ```
-### 编辑 frpc.toml
+**编辑 frpc.toml**
 ```
 serverAddr = "x.x.x.x"
 serverPort = 7000
@@ -76,7 +76,7 @@ type = "http"
 localPort = 8080
 customDomains = ["www.yourdomain2.com"]
 ```
-### 运行frpc
+**运行frpc**
 ```
 ./frpc -c frpc.toml  
 ```
