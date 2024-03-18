@@ -129,14 +129,16 @@ git add .
 # 使用GitHub提供的仓库URL将远程仓库添加为origin
 git remote add origin https://github.com/yourusername/your-repo-name.git
 # 推送本地更改到GitHub
-git push -u origin master
+git push -u origin main
 ```
 注意，推送时需要账号和PAT令牌，而不是密码哦
 
 #### 拉取操作
 ```
 cd /root/data/docs
-git pull origin master
+```
+```
+git pull origin main
 ```
 
 ### 疑难杂症
