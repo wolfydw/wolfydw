@@ -3,7 +3,7 @@
 	* [Docsify](/docsify)
 	* [ffmpeg](/ffmpeg)
  	* [mac](/mac)
-  	* [frp](/frp)
+	* [frp](/frp)
  
 * 谈资
 	* [体制](/tizhi)
