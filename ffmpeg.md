@@ -26,8 +26,12 @@ ffplay -f lavfi -i "movie=o1.mp4,delogo=x=15:y=1:w=149:h=54:show=1"
 
 去水印
 ```shell
-ffmpeg -i o1.mp4 -filter_complex "[0:v]delogo=x=15:y=1:w=149:h=54" -c:a copy 1.mp4
+ffmpeg -i o1.mp4 -filter_complex "[0:v]delogo=x=15:y=1:w=149:h=54" -c:a copy p1.mp4
 ```
+
+以上为去除B站月圆之夜录屏592*1280的参数
+
+396*854可以使用 x=10:y=1:w=98:h=33
 
 ### 使用crop滤镜来剪裁掉包含水印的区域
 ```
